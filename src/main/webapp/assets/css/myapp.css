@@ -8,8 +8,13 @@ body {
     padding-top: 54px;
 }
 
+nav ul li{
+    float:left;
+}
+
 @media (min-width: 992px) {
     body {
         padding-top: 56px;
     }
+
 }
