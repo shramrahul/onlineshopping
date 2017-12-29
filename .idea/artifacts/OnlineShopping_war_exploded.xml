@@ -15,6 +15,7 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.0.2.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-context:5.0.2.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.0.2.RELEASE" />
+          <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
         </element>
       </element>
       <element id="directory" name="META-INF">
