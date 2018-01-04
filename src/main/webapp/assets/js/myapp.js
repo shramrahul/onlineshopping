@@ -15,5 +15,13 @@ $(function(){
         case 'Home':
             $("#home").addClass('active');
             break;
+
+        case 'All Products':
+            $("#products").addClass('active');
+            break;
+
+        default:
+            $("#id_"+menu).addClass('active danger');
+            break;
     }
 })

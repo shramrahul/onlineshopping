@@ -1,0 +1,58 @@
+package com.shram.onlineshopping.domain;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Category {
+
+    /*
+    * private fields....
+    * */
+
+    private int id;
+    private String name;
+    private String imageurl;
+    private boolean active=true;
+
+    public Category() {
+    }
+
+    public Category(int id, String name, String imageurl, boolean active) {
+        this.id = id;
+        this.name = name;
+        this.imageurl = imageurl;
+        this.active = active;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getImageurl() {
+        return imageurl;
+    }
+
+    public void setImageurl(String imageurl) {
+        this.imageurl = imageurl;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+}

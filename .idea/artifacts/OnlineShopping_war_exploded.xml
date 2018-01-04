@@ -11,11 +11,24 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.0.2.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:5.0.2.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.0.2.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.data:spring-data-jpa:unknown" />
+          <element id="library" level="project" name="Maven: org.hibernate:hibernate-entitymanager:unknown" />
+          <element id="library" level="project" name="Maven: cglib:cglib-nodep:2.2.2" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:unknown" />
+          <element id="library" level="project" name="Maven: org.hibernate:hibernate-validator:unknown" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-log4j12:unknown" />
+          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-mapper-asl:unknown" />
+          <element id="library" level="project" name="Maven: com.h2database:h2:unknown" />
+          <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:unknown" />
+          <element id="library" level="project" name="Maven: org.springframework.data:spring-data-commons:2.0.2.RELEASE" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.25" />
+          <element id="library" level="project" name="Maven: log4j:log4j:unknown" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.0.2.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.0.2.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-context:5.0.2.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.0.2.RELEASE" />
           <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-tx:4.3.12.RELEASE" />
         </element>
       </element>
       <element id="directory" name="META-INF">

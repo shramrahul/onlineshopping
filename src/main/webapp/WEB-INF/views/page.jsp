@@ -33,6 +33,9 @@
     <!-- Bootstrap core CSS -->
     <link href="${css}/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Bootstrap bootswatch-theme CSS -->
+    <%--<link href="${css}/bootstrap.theme.css" rel="stylesheet">--%>
+
     <!-- Custom styles for this template -->
     <link href="${css}/myapp.css" rel="stylesheet">
 
@@ -40,33 +43,43 @@
 
 <body>
 
-<!-- Navigation -->
-<%@include file="./shared/navbar.jsp" %>
+<div class="wrapper">
+    <!-- Navigation -->
+    <%@include file="./shared/navbar.jsp" %>
 
-<!-- Page Content -->
-<c:if test="${userClickHome == true}">
-    <%@include file="home.jsp"%>
-</c:if>
+    <div class="content">
+        <!-- Page Content -->
+        <c:if test="${userClickHome == true}">
+            <%@include file="home.jsp"%>
+        </c:if>
 
-<!-- When user clicks about -->
-<c:if test="${userClickAbout == true}">
-    <%@include file="about.jsp"%>
-</c:if>
-
-
-<!-- Pwhen user clicks contact -->
-<c:if test="${userClickContact == true}">
-    <%@include file="contact.jsp"%>
-</c:if>
+        <!-- When user clicks about -->
+        <c:if test="${userClickAbout == true}">
+            <%@include file="about.jsp"%>
+        </c:if>
 
 
-<!-- Footer -->
-<%@include file="shared/footer.jsp"%>
+        <!-- when user clicks contact -->
+        <c:if test="${userClickContact == true}">
+            <%@include file="contact.jsp"%>
+        </c:if>
 
-<!-- Bootstrap core JavaScript -->
-<script src="${js}/jquery.min.js"></script>
-<script src="${js}/bootstrap.bundle.min.js"></script>
-<script src="${js}/myapp.js"></script>
+
+        <!-- when user clicks all products -->
+        <c:if test="${userClickAllProducts == true or userClickCategoryProducts == true}">
+            <%@include file="listproducts.jsp"%>
+        </c:if>
+
+    </div>
+    <!-- Footer -->
+    <%@include file="shared/footer.jsp"%>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="${js}/jquery.min.js"></script>
+    <script src="${js}/bootstrap.bundle.min.js"></script>
+    <script src="${js}/myapp.js"></script>
+
+</div>
 
 </body>
 
