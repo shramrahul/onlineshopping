@@ -1,6 +1,9 @@
 package com.shram.onlineshopping.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class Category {
@@ -9,6 +12,8 @@ public class Category {
     * private fields....
     * */
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
     private String imageurl;
