@@ -7,8 +7,12 @@ import java.util.Optional;
 
 
 public interface CategoryService {
+    void insertCategories();
     List<Category> getAllCategories();
-    Optional<Category> getAllProductsInACategory(int id);
+    List<Category> getAllActiveCategories();
+    boolean addCategory(Category category);
+    boolean updateCategory(Category category);
+    boolean deleteCategory(Category category);
     Category getCategoryById(int id);
 
 }

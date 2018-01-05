@@ -13,8 +13,8 @@
 
     <context:property-placeholder location="classpath:application.properties"/>
 
-    <context:component-scan base-package="com.shram.onlineshopping.service"/>
-    <context:component-scan base-package="com.shram.onlineshopping.repository"/>
+    <context:component-scan base-package="com.shram.onlineshopping.service.serviceimpl"/>
+    <context:component-scan base-package="com.shram.onlineshopping"/>
 
     <!-- Scan for  transaction-based resources -->
     <tx:annotation-driven transaction-manager="transactionManager"/>
@@ -53,7 +53,7 @@
                 <prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
                 <prop key="use_sql_comments">${use_sql_comments}</prop>
                 <prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
-                <prop key="hibernate.hbm2ddl.import_files">populateMySQL.sql</prop>
+                <prop key="hibernate.hbm2ddl.import_files">populateMYSQL.sql</prop>
             </props>
         </property>
     </bean>

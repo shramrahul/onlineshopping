@@ -2,6 +2,7 @@ package com.shram.onlineshopping.controller;
 
 import com.shram.onlineshopping.domain.Category;
 import com.shram.onlineshopping.service.CategoryService;
+import com.shram.onlineshopping.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,12 +18,16 @@ public class pageController {
     @Autowired
     CategoryService categoryService;
 
+    @Autowired
+    ProductService productService;
+
     @RequestMapping(value={"/","/home","/index"})
     public ModelAndView index(){
+        populateDatabase();
         ModelAndView mv= new ModelAndView("page");
         mv.addObject("title","Home");
         mv.addObject("userClickHome",true);
-        mv.addObject("categories",categoryService.getAllCategories());
+        mv.addObject("categories",categoryService.getAllActiveCategories());
         return mv;
     }
 
@@ -52,7 +57,7 @@ public class pageController {
         ModelAndView mv= new ModelAndView("page");
         mv.addObject("title","All Products");
         mv.addObject("userClickAllProducts",true);
-        mv.addObject("categories",categoryService.getAllCategories());
+        mv.addObject("categories",categoryService.getAllActiveCategories());
         return mv;
     }
 
@@ -63,8 +68,12 @@ public class pageController {
         mv.addObject("userClickCategoryProducts",true);
         mv.addObject("title",categoryService.getCategoryById(id).getName());
        // mv.addObject("products",categoryService.getAllProductsInACategory(id));
-        mv.addObject("categories",categoryService.getAllCategories());
+        mv.addObject("categories",categoryService.getAllActiveCategories());
         return mv;
     }
 
+    public void populateDatabase(){
+        if(categoryService.getAllCategories().isEmpty())categoryService.insertCategories();
+         if (productService.getAllProducts().isEmpty()) productService.insertProductsInDatabase();
+    }
 }

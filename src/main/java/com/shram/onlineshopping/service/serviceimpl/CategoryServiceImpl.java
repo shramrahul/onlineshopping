@@ -3,6 +3,8 @@ package com.shram.onlineshopping.service.serviceimpl;
 import com.shram.onlineshopping.domain.Category;
 import com.shram.onlineshopping.repository.CategoryRepository;
 import com.shram.onlineshopping.service.CategoryService;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -14,30 +16,63 @@ import java.util.Optional;
 @Transactional
 public class CategoryServiceImpl implements CategoryService {
 
-    List<Category> list;
 
+    @Autowired
     CategoryRepository categoryRepository;
 
-    public CategoryServiceImpl() {
-        list= new ArrayList<>();
-        list.add(new Category(1,"Phone","phone.jpg",true));
-        list.add(new Category(2,"Television","phone.jpg",true));
-        list.add(new Category(3,"Laptop","phone.jpg",true));
-        list.add(new Category(4,"Camera","phone.jpg",true));
+    @Override
+    public void insertCategories() {
+        addCategory(new Category(1,"Phone","phone.jpg",true));
+        addCategory(new Category(2,"Television","phone.jpg",false));
+        addCategory(new Category(3,"Laptop","phone.jpg",true));
+        addCategory(new Category(4,"Camera","phone.jpg",true));
     }
 
     @Override
     public List<Category> getAllCategories() {
-        return list;
+        return (List<Category>)categoryRepository.findAll();
     }
 
     @Override
-    public Optional<Category> getAllProductsInACategory(int id) {
-        return null;
+    public List<Category> getAllActiveCategories() {
+        return categoryRepository.findAllActiveCategories(true);
     }
 
+    @Override
+    public boolean addCategory(Category category) {
+        try {
+            categoryRepository.save(category);
+            return true;
+        }catch(Exception ex){
+            return false;
+        }
+    }
+
+    @Override
+    public boolean updateCategory(Category category) {
+        try {
+            categoryRepository.save(category);
+            return true;
+        }catch(Exception ex){
+            return false;
+        }
+    }
+
+    @Override
+    public boolean deleteCategory(Category category) {
+        try {
+            categoryRepository.delete(category);
+            return true;
+        }catch(Exception ex){
+            return false;
+        }
+    }
+
+    /*
+    * getting a single category with the given id
+    * */
     @Override
     public Category getCategoryById(int id) {
-        return list.stream().filter(c->c.getId()==id).findAny().get();
+        return categoryRepository.findOne( id);
     }
 }
