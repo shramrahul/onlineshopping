@@ -57,6 +57,7 @@ public class pageController {
         ModelAndView mv= new ModelAndView("page");
         mv.addObject("title","All Products");
         mv.addObject("userClickAllProducts",true);
+        mv.addObject("products",productService.getActiveProducts());
         mv.addObject("categories",categoryService.getAllActiveCategories());
         return mv;
     }
@@ -67,7 +68,7 @@ public class pageController {
         mv.addObject("category",categoryService.getCategoryById(id));
         mv.addObject("userClickCategoryProducts",true);
         mv.addObject("title",categoryService.getCategoryById(id).getName());
-       // mv.addObject("products",categoryService.getAllProductsInACategory(id));
+        mv.addObject("products",productService.getActiveProductsByCategory(id));
         mv.addObject("categories",categoryService.getAllActiveCategories());
         return mv;
     }

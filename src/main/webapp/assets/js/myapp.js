@@ -24,4 +24,4 @@ $(function(){
             $("#id_"+menu).addClass('active danger');
             break;
     }
-})
+});

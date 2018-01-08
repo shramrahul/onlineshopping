@@ -29,9 +29,13 @@
 
     <script>
         window.menu='${title}';
+        window.contextRoot='${contextRoot}'
     </script>
     <!-- Bootstrap core CSS -->
     <link href="${css}/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap datatable  CSS -->
+    <link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
 
     <!-- Bootstrap bootswatch-theme CSS -->
     <%--<link href="${css}/bootstrap.theme.css" rel="stylesheet">--%>
@@ -75,9 +79,20 @@
     <%@include file="shared/footer.jsp"%>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="${js}/jquery.min.js"></script>
-    <script src="${js}/bootstrap.bundle.min.js"></script>
-    <script src="${js}/myapp.js"></script>
+    <script src="${js}/jquery.min.js" type="text/javascript"></script>
+    <script src="${js}/bootstrap.min.js" type="text/javascript"></script>
+
+    <!-- Data Table plugin-->
+    <script src="${js}/jquery.dataTables.js" type="text/javascript"></script>
+
+    <%--<!-- Data Table js-->--%>
+    <%--<script src="${js}/dataTables.bootstrap.js"></script>--%>
+
+    <script src="${js}/myapp.js" type="text/javascript"></script>
+
+    <script src="${js}/table.js" type="text/javascript"></script>
+
+
 
 </div>
 
