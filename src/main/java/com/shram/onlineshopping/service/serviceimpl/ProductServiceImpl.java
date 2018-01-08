@@ -80,6 +80,6 @@ public class ProductServiceImpl implements ProductService {
         add(new Product("Samsung s7","Samsung","This is one of the best phone available in the market right now!","17000",4,true,1,1,0,0));
         add(new Product("LG lED","LG","This is one of the best TV available in the market right now!","15000",5,true,2,2,0,0));
         add(new Product("Insperon","Dell","This is one of the best laptop available in the market right now!","30000",4,true,3,3,0,0));
-        add(new Product("70D","Canon","This is one of the best DSLR available in the market right now!","35000",7,true,4,2,0,0));
+        add(new Product("70D","Canon","This is one of the best DSLR available in the market right now!","35000",0,true,4,2,0,0));
     }
 }

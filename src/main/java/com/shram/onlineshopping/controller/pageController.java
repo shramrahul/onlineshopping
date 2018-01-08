@@ -1,12 +1,15 @@
 package com.shram.onlineshopping.controller;
 
 import com.shram.onlineshopping.domain.Category;
+import com.shram.onlineshopping.domain.Product;
+import com.shram.onlineshopping.exception.ProductNotFoundException;
 import com.shram.onlineshopping.service.CategoryService;
 import com.shram.onlineshopping.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
@@ -70,6 +73,27 @@ public class pageController {
         mv.addObject("title",categoryService.getCategoryById(id).getName());
         mv.addObject("products",productService.getActiveProductsByCategory(id));
         mv.addObject("categories",categoryService.getAllActiveCategories());
+        return mv;
+    }
+
+    /*
+    * view single product
+    * */
+
+    @RequestMapping(value="/show/{id}/product", method= RequestMethod.GET)
+    public ModelAndView showPeoductDetails(@PathVariable int id) throws ProductNotFoundException{
+        ModelAndView mv= new ModelAndView("page");
+        Product product= productService.getProductById(id);
+
+        if(product==null) throw new ProductNotFoundException("The Product is not available");
+        //updating the view count
+        product.setViews(product.getViews()+1);
+        productService.update(product);
+
+        mv.addObject("title",product.getName());
+        mv.addObject("product",product);
+        mv.addObject("userClickShowProduct",true);
+
         return mv;
     }
 

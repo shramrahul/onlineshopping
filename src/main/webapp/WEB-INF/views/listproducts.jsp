@@ -59,11 +59,25 @@
                         <td>${product.name}</td>
                         <td>${product.brand}</td>
                         <td>${product.unitPrice}</td>
-                        <td>${product.quantity}</td>
-                        <td>
-                            <a href="/show/${product.id}/product" class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span></a>
-                            <a href="" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span></a>
-                        </td>
+
+                        <c:choose>
+                            <c:when test="${product.quantity<1}">
+                            <td><span style="color: red">out of stock </span></td>
+                                <td>
+                                    <a href="/show/${product.id}/product" class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span></a>
+                                    <a href="javascript:void(0)" class="btn btn-success disabled"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+                                </td>
+                        </c:when>
+                         <c:otherwise>
+
+                             <td><span>${product.quantity} </span></td>
+                             <td>
+                                 <a href="/show/${product.id}/product" class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span></a>
+                                 <a href="" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+                             </td>
+                         </c:otherwise>
+                        </c:choose>
+
                     </tr>
                     </c:forEach>
                     </tbody>
