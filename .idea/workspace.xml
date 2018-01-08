@@ -7,16 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e91fd5ca-1e46-4227-a961-e0382878f53b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/shram/onlineshopping/exception/GlobalDefaultExceptionHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/shram/onlineshopping/exception/ProductNotFoundException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/error.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/individualProduct.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/shram/onlineshopping/controller/pageController.java" afterPath="$PROJECT_DIR$/src/main/java/com/shram/onlineshopping/controller/pageController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/shram/onlineshopping/service/serviceimpl/ProductServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/shram/onlineshopping/service/serviceimpl/ProductServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/listproducts.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/listproducts.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/page.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/page.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -703,7 +694,7 @@
       <workItem from="1514486868346" duration="6877000" />
       <workItem from="1514496523109" duration="28047000" />
       <workItem from="1515045764317" duration="41903000" />
-      <workItem from="1515298790277" duration="21920000" />
+      <workItem from="1515298790277" duration="21998000" />
     </task>
     <task id="LOCAL-00001" summary="configured the dispatcher-servlet and view resolver">
       <created>1514494065831</created>
@@ -761,7 +752,14 @@
       <option name="project" value="LOCAL" />
       <updated>1515441181646</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added the Exception handler for product and disabled buttons for the products whose quantity is 0">
+      <created>1515454213307</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1515454213307</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -794,7 +792,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98747000" />
+    <option name="totallyTimeSpent" value="98825000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -851,7 +849,8 @@
     <MESSAGE value="hibernate configured successfully with only one entity, category." />
     <MESSAGE value="added produce entity and added some test datas of products to database" />
     <MESSAGE value="all products as well as the products as per the category can be viewed. It is implemented using jstl. ajax didnt work for the display" />
-    <option name="LAST_COMMIT_MESSAGE" value="all products as well as the products as per the category can be viewed. It is implemented using jstl. ajax didnt work for the display" />
+    <MESSAGE value="added the Exception handler for product and disabled buttons for the products whose quantity is 0" />
+    <option name="LAST_COMMIT_MESSAGE" value="added the Exception handler for product and disabled buttons for the products whose quantity is 0" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
