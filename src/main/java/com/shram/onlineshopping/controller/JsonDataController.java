@@ -20,8 +20,9 @@ public class JsonDataController {
 
     @RequestMapping(value="/all/products",method = RequestMethod.GET)
 
-    public @ResponseBody List<Product> getAllProducts(){
-        return productService.getActiveProducts();
+    public @ResponseBody String getAllProducts(){
+        System.out.println("here we go----------------"+productService.getActiveProducts());
+        return productService.getActiveProducts().toString();
     }
 
 

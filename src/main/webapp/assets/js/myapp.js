@@ -20,6 +20,10 @@ $(function(){
             $("#products").addClass('active');
             break;
 
+        case 'Manage Products':
+            $("#manageProducts").addClass('active');
+            break;
+
         default:
             $("#id_"+menu).addClass('active danger');
             break;

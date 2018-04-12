@@ -47,63 +47,47 @@
 
 <div class="wrapper">
     <!-- Navigation -->
-   <div class="wrapper">
+    <div class="wrapper">
 
-       <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-           <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
 
-               <div class="collapse navbar-collapse" id="navbarResponsive">
-                   <ul class="navbar-nav ml-auto">
-                       <li class="nav-item" id="home">
-                           <a class="nav-link" href="${contextRoot}/home">Home</a>
-                       </li>
-                   </ul>
-               </div>
-           </div>
-       </nav>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item" id="home">
+                            <a class="nav-link" href="${contextRoot}/home">Home</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-       <div class="content">
-           <div class="container">
-               <div class="row">
-                   <div class="col-xs-12">
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
 
-                       <div class="jumbotron">
-                           <h1>${errorTitle}</h1>
-                           <hr/>
+                        <div class="jumbotron">
+                            <h1>${errorTitle}</h1>
+                            <hr/>
 
-                           <blockquote>
-                               ${errorDescription}
-                           </blockquote>
-                       </div>
+                            <blockquote>
+                                ${errorDescription}
+                            </blockquote>
+                        </div>
 
-               </div>
-           </div>
-       </div>
+                    </div>
+                </div>
+            </div>
 
 
-   </div>
-    <!-- Footer -->
-    <%@include file="shared/footer.jsp"%>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="${js}/jquery.min.js" type="text/javascript"></script>
-    <script src="${js}/bootstrap.min.js" type="text/javascript"></script>
-
-    <!-- Data Table plugin-->
-    <script src="${js}/jquery.dataTables.js" type="text/javascript"></script>
-
-    <%--<!-- Data Table js-->--%>
-    <%--<script src="${js}/dataTables.bootstrap.js"></script>--%>
-
-    <script src="${js}/myapp.js" type="text/javascript"></script>
-
-    <script src="${js}/table.js" type="text/javascript"></script>
+        </div>
+        <!-- Footer -->
 
 
 
-</div>
+    </div>
 
 </body>
 
 </html>
-

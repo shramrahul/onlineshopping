@@ -47,8 +47,6 @@
           <element id="library" level="project" name="Maven: javax.validation:validation-api:1.1.0.Final" />
           <element id="library" level="project" name="Maven: com.fasterxml:classmate:1.1.0" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-log4j12:1.7.21" />
-          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.7.1" />
-          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-core-asl:1.9.13" />
           <element id="library" level="project" name="Maven: com.h2database:h2:1.4.192" />
           <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.3.2" />
           <element id="library" level="project" name="Maven: commons-io:commons-io:2.4" />
@@ -56,6 +54,7 @@
           <element id="library" level="project" name="Maven: org.testng:testng:6.8.21" />
           <element id="library" level="project" name="Maven: org.beanshell:bsh:2.0b4" />
           <element id="library" level="project" name="Maven: com.beust:jcommander:1.27" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.8.10" />
         </element>
       </element>
       <element id="directory" name="META-INF">

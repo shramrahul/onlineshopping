@@ -1,6 +1,8 @@
 package com.shram.onlineshopping.domain;
 
-import org.codehaus.jackson.annotate.JsonIgnore;
+
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.UUID;
@@ -55,6 +57,7 @@ public class Product {
     /*
         * getters and setters
         * */
+
     public int getId() {
         return id;
     }
@@ -149,5 +152,24 @@ public class Product {
 
     public void setViews(int views) {
         this.views = views;
+    }
+
+
+    @Override
+    public String toString() {
+        return "\nProduct{" +
+                "id=" + id +
+                ", code='" + code + '\'' +
+                ", name='" + name + '\'' +
+                ", brand='" + brand + '\'' +
+                ", description='" + description + '\'' +
+                ", unitPrice='" + unitPrice + '\'' +
+                ", quantity=" + quantity +
+                ", active=" + active +
+                ", categoryId=" + categoryId +
+                ", supplierId=" + supplierId +
+                ", purchases=" + purchases +
+                ", views=" + views +
+                '}';
     }
 }

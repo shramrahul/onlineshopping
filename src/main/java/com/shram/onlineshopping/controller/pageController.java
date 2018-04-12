@@ -51,51 +51,7 @@ public class pageController {
     }
 
 
-    /*
-    * method to show all the products in a category
-    * */
 
-    @RequestMapping(value="show/all/products")
-    public ModelAndView showAllProducts(){
-        ModelAndView mv= new ModelAndView("page");
-        mv.addObject("title","All Products");
-        mv.addObject("userClickAllProducts",true);
-        mv.addObject("products",productService.getActiveProducts());
-        mv.addObject("categories",categoryService.getAllActiveCategories());
-        return mv;
-    }
-
-    @RequestMapping(value="show/category/{id}/products")
-    public ModelAndView showAllProductsInACategory(@PathVariable("id") int id){
-        ModelAndView mv= new ModelAndView("page");
-        mv.addObject("category",categoryService.getCategoryById(id));
-        mv.addObject("userClickCategoryProducts",true);
-        mv.addObject("title",categoryService.getCategoryById(id).getName());
-        mv.addObject("products",productService.getActiveProductsByCategory(id));
-        mv.addObject("categories",categoryService.getAllActiveCategories());
-        return mv;
-    }
-
-    /*
-    * view single product
-    * */
-
-    @RequestMapping(value="/show/{id}/product", method= RequestMethod.GET)
-    public ModelAndView showPeoductDetails(@PathVariable int id) throws ProductNotFoundException{
-        ModelAndView mv= new ModelAndView("page");
-        Product product= productService.getProductById(id);
-
-        if(product==null) throw new ProductNotFoundException("The Product is not available");
-        //updating the view count
-        product.setViews(product.getViews()+1);
-        productService.update(product);
-
-        mv.addObject("title",product.getName());
-        mv.addObject("product",product);
-        mv.addObject("userClickShowProduct",true);
-
-        return mv;
-    }
 
     public void populateDatabase(){
         if(categoryService.getAllCategories().isEmpty())categoryService.insertCategories();
