@@ -1,0 +1,60 @@
+
+
+<div class="container">
+    <!--BreadCrum-->
+
+        <div class="col-xs-12">
+            <ol class="breadcrumb">
+                <li><a href="" (click)="onClickHome()">Home</a></li>
+                <li><a href=""(click)="onClickBack()" >Products</a></li>
+                <li class="active">{{product.name}}</li>
+            </ol>
+
+        </div>
+
+    <div class="">
+    <!--display product image-->
+    <div class="col-sm-4">
+        <div class="thumbnail">
+            <img src="../assets/images/phone.png" class="img img-responsive"/>
+        </div>
+    </div>
+
+    <!--display product description-->
+    <div class="col-sm-8">
+        <h3><strong>{{product.brand}}</strong> {{product.name}}</h3>
+        <hr/>
+
+        <p>{{product.description}}</p>
+        <hr/>
+
+        <h4>Price:<strong> &#36; {{product.unitPrice}}</strong></h4>
+        <hr/>
+
+        <div>
+            <div >
+                <h5>Qty. Available: 
+                    <span *ngIf="product.quantity==0" class="text-danger">Out Of Stock</span> 
+                    <span *ngIf="product.quantity>0">{{product.quantity}}</span>
+                
+                    || Total views: <strong>{{product.views}}</strong>
+                </h5>
+            </div>
+
+            <span *ngIf="product.quantity==0">
+                <a  href="javascript:void(0)" class="btn btn-danger disabled">
+                    <span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</a>
+                </span>
+
+            <span *ngIf="product.quantity>0">
+                <button   class="btn btn-success" (click)= "onClickAddToCart()">
+                    <span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button>
+                </span>
+           
+
+        <button (click)="onClickBack()" class="btn btn-primary"> Back</button>
+        
+        </div>
+    </div>
+    </div>
+</div>

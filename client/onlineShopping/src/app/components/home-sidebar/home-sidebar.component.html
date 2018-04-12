@@ -1,0 +1,75 @@
+
+<div class= "container">
+<div class= "row" id="row" >
+<div class="col-lg-3 pull-left">
+
+    <h1 class="my-4">Categories</h1>
+    <div class="list-group" *ngFor="let category of categories">
+      <button class="btn btn-primary" (click)="getAllProductsByCategoryName(category.name)"  class="list-group-item">{{category.name}}</button>
+    </div>
+
+  </div>
+
+
+  <div class="col-lg-9 pull-right" >
+<h2>
+      <!-- <h1 class="my-4">Trending Products -->
+      <div class="col-xs-12">
+          <ol class="breadcrumb">
+              <li>Trending Products</li>
+              <li><a href="" >"Category name here"</a></li>
+              
+          </ol>
+
+      </div></h2>
+
+      <table class="table table-striped display" id="product-list" >
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Brand</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+           <tr *ngFor="let product of products" >
+              <td ><img id="image" src="../../assets/images/phone.png"></td>
+              <td>{{product.name}}</td>
+              <td>{{product.brand}}</td>
+              <td>{{product.unitPrice}}</td>
+              <td>
+                  <span *ngIf="product.quantity==0" class="text-danger">out of stock</span>
+                  <span *ngIf="product.quantity>0" >{{product.quantity}}</span>
+              </td>
+              <td>
+                <a [routerLink]="['product',product.code]" class="btn btn-primary" 
+                      (click)="onClickShowDetailsOfProduct(product.code)">
+                  <span class="glyphicon glyphicon-eye-open"></span></a>
+                
+                  <button *ngIf="product.quantity==0" 
+                            class="linkDisabled btn btn-danger disabled">
+                  <span class="glyphicon glyphicon-shopping-cart"></span>
+                </button>
+                
+                <button *ngIf="product.quantity>0" 
+                          class="btn btn-success"
+                          (click)="onClickAddToCart(product)">
+                  <span class="glyphicon glyphicon-shopping-cart"></span>
+                </button>
+            </td>
+           </tr>
+          </tbody>
+        </table>
+  
+        <button [routerLink]="['cart']" class="btn btn-warning"> cart</button>
+    </div>
+  
+
+
+</div>
+</div>
+
+<router-outlet></router-outlet>

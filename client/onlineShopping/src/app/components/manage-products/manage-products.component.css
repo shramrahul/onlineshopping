@@ -1,0 +1,12 @@
+#image{
+    height:50px;
+    width:50px;
+}
+
+#active{
+    background-color: green;
+}
+
+#deactive{
+    background-color: red;
+}

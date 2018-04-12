@@ -1,0 +1,243 @@
+<div class= "container">
+    <div class="row">
+      <div class="col-md-offset-2 col-md-8">
+          <div class="panel panel-primary">
+              <div class="panel-heading">
+  
+                  <h4>User Register</h4>
+        
+                </div>
+  
+                <div class="panel-body">
+  
+                  <form class="form-horizontal"  #signupForm = "ngForm">
+  
+                    <div class="form-group" >
+                      <label class="control-label col-md-4" 
+                              for ="firstName" >First Name</label>
+                        <div class="col-md-8" >
+                          <input type="text" 
+                                  [(ngModel)]="user.firstName" 
+                                  [ngModelOptions]="{standalone: true}" 
+                                  name="firstName" id="firstName" 
+                                  placeholder="First Name" 
+                                  class="form-control"/>
+                      </div>
+                   </div>
+  
+  
+                      <div class="form-group" >
+                          <label class="control-label col-md-4" 
+                                  for ="lastName" >Last Name</label>
+                            <div class="col-md-8" >
+                              <input type="text" 
+                                      [(ngModel)]="user.lastName" 
+                                      [ngModelOptions]="{standalone: true}" 
+                                      name="lastName" id="lastName" 
+                                      placeholder="Last Name" 
+                                      class="form-control"/>
+                          </div>
+                      </div>
+  
+  
+                      <div class="form-group" >
+                          <label class="control-label col-md-4" for ="email" >Email</label>
+                            <div class="col-md-8" >
+                              <input type="text" 
+                                      [(ngModel)]="user.email" 
+                                      [ngModelOptions]="{standalone: true}" 
+                                      name="email" id="email" 
+                                      placeholder="Email" 
+                                      class="form-control"
+                                      required
+                                      #email="ngModel"
+                                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"/>
+                          </div>
+
+
+                      </div>
+  
+  
+                      <div class="form-group" >
+                          <label class="control-label col-md-4" for ="phone" >Phone</label>
+                            <div class="col-md-8" >
+                              <input type="text" 
+                                      [(ngModel)]="user.phone" 
+                                      [ngModelOptions]="{standalone: true}"  
+                                      name="phone" id="phone" 
+                                      placeholder="phone" 
+                                      class="form-control"/>
+                          </div>
+                      </div>
+  
+  
+                      <div class="form-group" >
+                          <label class="control-label col-md-4" for ="username" >Enter Username</label>
+                            <div class="col-md-8" >
+                                <input type="text" 
+                                        [(ngModel)]="user.username" 
+                                        [ngModelOptions]="{standalone: true}" 
+                                        name="username" id="username" 
+                                        placeholder="enter username" 
+                                        class="form-control"/>
+                          </div>
+                      </div>
+
+
+                      <div class="form-group" >
+                          <label class="control-label col-md-4" for ="password" >Enter Password</label>
+                            <div class="col-md-8" >
+                                <input type="password"
+                                       [(ngModel)]="user.password" 
+                                       [ngModelOptions]="{standalone: true}" 
+                                       name="password" id="password" 
+                                       placeholder="enter password" 
+                                       class="form-control"
+                                       #pwd = "ngModel"
+                                       minlength="8"/>
+                          </div>
+                      </div>
+                      
+                     
+                      <div class="form-group" >
+                          <label class="control-label col-md-4" for ="role" >Select Role</label>
+                            <div class="col-md-8" >
+                                
+                              <label class="radio-inline">
+                                <input type="radio" 
+                                        name="user" 
+                                        value="user" 
+                                        [(ngModel)]="user.role"/>user 
+                                </label>
+
+                                <label class="radio-inline">
+                                <input type="radio" 
+                                        name="supplier" 
+                                        value="supplier" 
+                                        [(ngModel)]="user.role"/>Supplier
+                                </label>
+                           
+                            </div>
+                      </div>
+  
+                      <div class="form-group" >
+  
+                            <span class="col-md-offset-4 col-md-8 " >
+
+                                <input name="reset" 
+                                        id="reset" type="reset" 
+                                        class="btn btn-warning"/>
+
+                              <button  name="submit" 
+                                        id="submit" 
+                                        class="btn btn-primary"
+                                        data-toggle="modal" 
+                                        data-target="#billingAddressForm"
+                                        [disabled]="!signupForm.form.valid">
+                                  Billing Address 
+                                        <span class="glyphicon glyphicon-triangle-right">
+                                        </span>
+                              </button>
+
+                              
+                          </span>
+  
+                         
+  
+                     </div>
+  
+  
+                  </form>
+                </div>
+  
+            </div>
+        </div>
+      </div>
+
+
+
+<!--Billing address modal register-->
+<div class="modal fade" id="billingAddressForm" role="dialog" tabindex="-1">
+    <div class="modal-dialog" role="document">
+      <div class= "modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Add Billing Address</h4>
+          <button type="button" class="close" data-dismiss="modal"  >
+            <span>&times;</span>
+          </button>
+         
+          </div>
+
+          <div class="modal-form">
+              <!--Category Form-->
+              <form class="form-horizontal">
+         
+
+                  <div class="form-group" >
+                      <label class="control-label col-md-4" for ="addressLine1" >Address Line One</label>
+                        <div class="col-md-8" >
+                          <input type="text" [(ngModel)]="address.addressLineOne" [ngModelOptions]="{standalone: true}" name="addressLine1" id="addressLine1" placeholder="Address Line 1" class="form-control"/>
+                      </div>
+                   </div>
+  
+  
+                   <div class="form-group" >
+                      <label class="control-label col-md-4" for ="addressLine2" >Address Line One</label>
+                        <div class="col-md-8" >
+                          <input type="text" [(ngModel)]="address.addressLineTwo" [ngModelOptions]="{standalone: true}" name="addressLine2" id="addressLine2" placeholder="Address Line 2" class="form-control"/>
+                      </div>
+                   </div>
+
+
+                   <div class="form-group" >
+                      <label class="control-label col-md-4" for ="city" >City</label>
+                        <div class="col-md-8" >
+                          <input type="text" [(ngModel)]="address.city" [ngModelOptions]="{standalone: true}" name="city" id="city" placeholder="City" class="form-control"/>
+                      </div>
+                   </div>
+
+                   <div class="form-group" >
+                      <label class="control-label col-md-4" for ="state" >State</label>
+                        <div class="col-md-8" >
+                          <input type="text" [(ngModel)]="address.state" [ngModelOptions]="{standalone: true}" name="state" id="state" placeholder="State" class="form-control"/>
+                      </div>
+                   </div>
+  
+
+                   <div class="form-group" >
+                      <label class="control-label col-md-4" for ="postalCode" >Postal COde</label>
+                        <div class="col-md-8" >
+                          <input type="text" [(ngModel)]="address.postalCode" [ngModelOptions]="{standalone: true}" name="postalCode" id="postalCode" placeholder="Postal Code" class="form-control"/>
+                      </div>
+                   </div>
+
+
+                   <div class="form-group" >
+                      <label class="control-label col-md-4" for ="country" >Country</label>
+                        <div class="col-md-8" >
+                          <input type="text" [(ngModel)]="address.country" [ngModelOptions]="{standalone: true}" name="country" id="country" placeholder="Country" class="form-control"/>
+                      </div>
+                   </div>
+
+                      <div class="form-group" >
+                            <span class="col-md-offset-4 col-md-8 " >
+                                <input name="address_reset" id="address_reset" type="reset" class="btn btn-warning"/>  
+                              <a [routerLink]="['home']" id="btn_register" (click)= "onClickRegister()" class="btn btn-primary">
+                                    Register 
+                              </a>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Clsoe</button>
+                          </span>
+  
+                         
+  
+                     </div>
+  
+  
+              </form>
+          </div>
+        </div>
+      </div>
+      </div>
+
+
+</div>

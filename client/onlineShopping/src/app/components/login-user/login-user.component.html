@@ -1,0 +1,55 @@
+
+
+  <div class= "container">
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+    
+                    <h4>Sign-in</h4>
+          
+                  </div>
+    
+                  <div class="panel-body">
+    
+                      <div class="alert alert-danger" [hidden]="!error">
+                          There was a problem logging in. Please try again.
+                        </div>
+                        <form role="form" (submit)="login()">
+                      
+                            <div class="form-group" >
+                                <label class="control-label col-md-4" for ="username" >Enter Username</label>
+                                  <div class="col-md-8" >
+                                      <input type="text" 
+                                              [(ngModel)]="credentials.username" 
+                                              [ngModelOptions]="{standalone: true}" 
+                                              name="username" id="username" 
+                                              placeholder="enter username" 
+                                              class="form-control"/>
+                                </div>
+                            </div>
+                      
+                            <div class="form-group" >
+                                <label class="control-label col-md-4" for ="password" >Enter Password</label>
+                                  <div class="col-md-8" >
+                                      <input type="password"
+                                             [(ngModel)]="credentials.password" 
+                                             [ngModelOptions]="{standalone: true}" 
+                                             name="password" id="password" 
+                                             placeholder="enter password" 
+                                             class="form-control"
+                                             #pwd = "ngModel"
+                                             minlength="8"/>
+                                </div>
+                            </div>
+
+                          <div class="col-md-offset-5 ">
+                          <button type="submit" class="btn btn-primary">signin</button>
+                        </div>
+                        </form>
+                  </div>
+    
+              </div>
+          </div>
+        </div>
+        </div>
